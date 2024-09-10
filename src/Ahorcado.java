@@ -2,7 +2,13 @@ import java.util.Scanner;
 
 public class Ahorcado {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        System.out.println();
+        System.out.println("        { Juego del Ahorcado }");
+        System.out.println("Bienvenido(a)! Vamos a jugar al ahorcado!");
+        System.out.println();
+        System.out.println("Debes adivinar una palabra para ganar, Vamos!, Intentalo!");
+        System.out.println();
+        
 
         //Utilizamos la clase Scanner para consultar al usuario.
         Scanner scanner = new Scanner(System.in);
@@ -29,6 +35,7 @@ public class Ahorcado {
             System.out.println("Palabra a adivinar: " + String.valueOf(letrasAdividanas) + " (" + palabraSecreta.length() + " letras)");
 
             System.out.println("Introduce una letra por favor: ");
+            System.out.println();
 
             //Usamos la clase Scanner para pedir una letra
             char letra = Character.toLowerCase(scanner.next().charAt(0));
@@ -51,6 +58,7 @@ public class Ahorcado {
                 intentos++;
                 //Imprimimos un mensaje advirtiendo que le quedan menos intentos.
                 System.out.println("¡Incorrecto! Te quedan " + (intentosMaximos - intentos) + " intentos");
+                System.out.println();
             }
             //Si las letras ingresadas son iguales a las de la palabra secreta
             if(String.valueOf(letrasAdividanas).equals(palabraSecreta)) {
@@ -58,11 +66,13 @@ public class Ahorcado {
                 palabraAdivinada = true;
                 //Imprimimos un mensaje por consola, mostrando cual fue la palabra secreta.
                 System.out.println("¡Felicidades!, Has adivinado la palabra secreta: " + palabraSecreta);
+                System.out.println();
             }
         }
         //Si la palabra no es la correcta, se imprime un mensaje de game over.
         if(!palabraAdivinada) {
             System.out.println("¡Que pena!, te has quedado sin intentos, GAME OVER!");
+            System.out.println();
         }
 
         scanner.close();
